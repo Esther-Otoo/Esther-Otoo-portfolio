@@ -210,24 +210,24 @@ export function Services() {
 
 const PROJECTS = [
   {
-    title: "Employee Leave Management System",
-    text: "A web application for requesting, approving and tracking staff leave with role-based dashboards.",
-    tags: ["PHP", "MySQL", "JavaScript", "CSS"],
+    title: "DUSSUS — For The Boss Within",
+    text: "Brand and campaign concept for an all-genders clothing store: positioning as affordable luxury, a launch offer for the first 50 shoppers, and creatives across tops, bottoms, footwear and accessories.",
+    tags: ["Brand Strategy", "Campaign", "Canva"],
   },
   {
-    title: "BossesFit Digital Marketing Campaign",
-    text: "End-to-end campaign covering audience research, content calendar and performance reporting.",
-    tags: ["Social Media", "Content", "Analytics"],
+    title: "Wares — Product Catalogue Launch",
+    text: "Digital catalogue and web presence for a homeware range, with clear product storytelling across sizes and colours to make browsing effortless on mobile and tablet.",
+    tags: ["Content", "Web", "E-commerce"],
   },
   {
-    title: "SEO Strategy Projects",
-    text: "Keyword research, on-page optimisation and technical fixes that improved organic visibility.",
-    tags: ["SEO", "Keyword Research", "GA4"],
+    title: "Data-Informed Campaign Plan",
+    text: "Built and presented a full campaign plan during the Generation Ghana bootcamp — audience research, channel mix, budget and KPIs, with post-campaign analysis and optimisation recommendations.",
+    tags: ["Paid Ads", "Analytics", "Strategy"],
   },
   {
-    title: "Social Media Campaigns",
-    text: "Creative concepts and Canva assets produced for product launches and awareness pushes.",
-    tags: ["Canva", "Copywriting", "Instagram"],
+    title: "SEO & Social Growth Sprint",
+    text: "Keyword research, on-page optimisation and a content calendar designed to lift organic visibility and sustain engagement week over week.",
+    tags: ["SEO", "Keyword Research", "Social Media"],
   },
 ];
 
@@ -237,7 +237,7 @@ export function Projects() {
       id="projects"
       eyebrow="Projects"
       title="Selected work"
-      lead="A snapshot of the projects I've built and the campaigns I've run."
+      lead="Where strategy meets creativity — projects that analyse the challenge, tailor the solution and deliver lasting business impact."
     >
       <div className="grid gap-5 sm:grid-cols-2">
         {PROJECTS.map((p) => (
@@ -285,10 +285,10 @@ export function Projects() {
 /* ----------------------------- certifications ----------------------------- */
 
 const CERTS = [
-  { title: "Digital Marketing Professional", issuer: "Training Programme", year: "2025" },
-  { title: "Google Analytics Fundamentals", issuer: "Google", year: "2025" },
-  { title: "SEO Essentials", issuer: "Online Certification", year: "2024" },
-  { title: "Customer Service Excellence", issuer: "Professional Course", year: "2024" },
+  { title: "Digital Marketing Bootcamp", issuer: "Generation Ghana", year: "2026" },
+  { title: "BSc Computer Science", issuer: "KNUST", year: "2026" },
+  { title: "National Service Certificate", issuer: "DVLA, Ghana", year: "2024" },
+  { title: "IT Internship", issuer: "Tema Oil Refinery", year: "2022" },
 ];
 
 export function Certifications() {
@@ -297,7 +297,7 @@ export function Certifications() {
       id="certifications"
       eyebrow="Certifications"
       title="Continuous learning"
-      lead="Placeholders ready for your certificate names, issuers and dates."
+      lead="Training and credentials that back up the work."
       muted
     >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
