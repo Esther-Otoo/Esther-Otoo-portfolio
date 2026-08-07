@@ -288,6 +288,7 @@ export function Projects() {
 const CERTS = [
   { title: "Digital Marketing Bootcamp", issuer: "Generation Ghana", year: "2026" },
   { title: "BSc Computer Science", issuer: "KNUST", year: "2026" },
+  { title: "Customer Service", issuer: "Goldmaxx Security Company", year: "2021" },
   { title: "National Service Certificate", issuer: "DVLA, Ghana", year: "2024" },
   { title: "IT Internship", issuer: "Tema Oil Refinery", year: "2022" },
 ];

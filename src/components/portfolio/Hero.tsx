@@ -1,5 +1,5 @@
 import { Download, Mail, MapPin } from "lucide-react";
-import avatar from "@/assets/avatar.jpg";
+import avatarAsset from "@/assets/esther.jpg.asset.json";
 import cvAsset from "@/assets/cv.pdf.asset.json";
 import { useCounter, useMagnetic, useTyping } from "./hooks";
 
@@ -107,10 +107,10 @@ export function Hero() {
           <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-[image:var(--gradient-brand)] opacity-20 blur-2xl" />
           <div className="card-surface overflow-hidden rounded-[2rem] p-3">
             <img
-              src={avatar}
+              src={avatarAsset.url}
             alt="Portrait of Esther Ntiamoah Otoo, freelance digital marketer and Computer Science graduate"
-              width={816}
-              height={816}
+              width={609}
+              height={663}
               className="aspect-square w-full rounded-3xl object-cover"
             />
             <div className="flex items-center justify-between px-3 py-4">
