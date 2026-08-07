@@ -1,0 +1,595 @@
+import { useState, type ReactNode } from "react";
+import {
+  Award,
+  BarChart3,
+  Brain,
+  Briefcase,
+  Code2,
+  Github,
+  Globe,
+  GraduationCap,
+  Headset,
+  Heart,
+  Linkedin,
+  Mail,
+  MapPin,
+  Megaphone,
+  MessageSquare,
+  PenTool,
+  Quote,
+  Rocket,
+  Search,
+  Send,
+  Share2,
+  Sparkles,
+  Users,
+} from "lucide-react";
+import { toast } from "sonner";
+import { useReveal } from "./hooks";
+
+/* ---------------------------------- shell --------------------------------- */
+
+function Section({
+  id,
+  eyebrow,
+  title,
+  lead,
+  children,
+  muted,
+}: {
+  id: string;
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  children: ReactNode;
+  muted?: boolean;
+}) {
+  const reveal = useReveal<HTMLDivElement>();
+  return (
+    <section id={id} className={muted ? "bg-card/60 py-20 sm:py-24" : "py-20 sm:py-24"}>
+      <div ref={reveal.ref} className={`mx-auto max-w-6xl px-5 sm:px-8 ${reveal.className}`}>
+        <p className="font-mono text-xs uppercase tracking-[0.18em] text-primary">{eyebrow}</p>
+        <h2 className="mt-3 text-3xl sm:text-4xl">{title}</h2>
+        {lead && <p className="mt-4 max-w-2xl text-muted-foreground">{lead}</p>}
+        <div className="mt-10">{children}</div>
+      </div>
+    </section>
+  );
+}
+
+function Card({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <div className={`card-surface card-hover p-6 ${className}`}>{children}</div>;
+}
+
+function Tag({ children }: { children: ReactNode }) {
+  return (
+    <span className="rounded-full border border-border bg-secondary px-2.5 py-1 font-mono text-[11px] text-muted-foreground">
+      {children}
+    </span>
+  );
+}
+
+/* ---------------------------------- about --------------------------------- */
+
+const HIGHLIGHTS = [
+  { icon: Code2, title: "Computer Science background", text: "Web development, databases and software fundamentals." },
+  { icon: Megaphone, title: "Digital marketing training", text: "SEO, SEM, social media, content and email marketing." },
+  { icon: Brain, title: "Analytical thinking", text: "Data-informed decisions with Google Analytics and research." },
+  { icon: Heart, title: "Growth mindset", text: "Fast learner, strong communicator and dependable teammate." },
+];
+
+export function About() {
+  return (
+    <Section
+      id="about"
+      eyebrow="About me"
+      title="A technologist with a marketer's instinct"
+      lead="I'm a Computer Science graduate with professional digital marketing training. I enjoy the space where technology meets people — building and maintaining websites, running campaigns that reach the right audience, and supporting users so technology feels effortless."
+      muted
+    >
+      <div className="grid gap-5 sm:grid-cols-2">
+        {HIGHLIGHTS.map(({ icon: Icon, title, text }) => (
+          <Card key={title}>
+            <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <Icon className="size-5" />
+            </span>
+            <h3 className="mt-4 text-lg">{title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* --------------------------------- skills --------------------------------- */
+
+const SKILL_GROUPS = [
+  {
+    icon: Code2,
+    title: "Technical",
+    items: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Java", "Microsoft Office"],
+  },
+  {
+    icon: BarChart3,
+    title: "Digital Marketing",
+    items: [
+      "SEO",
+      "SEM",
+      "Social Media Marketing",
+      "Google Analytics",
+      "Content Strategy",
+      "Email Marketing",
+      "Keyword Research",
+      "Canva",
+    ],
+  },
+  {
+    icon: Users,
+    title: "Professional",
+    items: [
+      "Customer Service",
+      "Communication",
+      "Problem Solving",
+      "Teamwork",
+      "Time Management",
+      "Organization",
+    ],
+  },
+];
+
+export function Skills() {
+  return (
+    <Section
+      id="skills"
+      eyebrow="Skills"
+      title="What I bring to a team"
+      lead="A practical mix of technical ability, marketing know-how and the soft skills that keep projects moving."
+    >
+      <div className="grid gap-5 lg:grid-cols-3">
+        {SKILL_GROUPS.map(({ icon: Icon, title, items }) => (
+          <Card key={title}>
+            <div className="flex items-center gap-3">
+              <span className="inline-flex size-10 items-center justify-center rounded-xl bg-teal/15 text-teal">
+                <Icon className="size-5" />
+              </span>
+              <h3 className="text-lg">{title}</h3>
+            </div>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {items.map((item) => (
+                <li key={item}>
+                  <span className="inline-block rounded-lg border border-border bg-secondary px-3 py-1.5 font-mono text-xs text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5 hover:text-primary">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* -------------------------------- services -------------------------------- */
+
+const SERVICES = [
+  { icon: Megaphone, title: "Digital Marketing", text: "SEO, SEM and campaign planning that grows visibility and leads." },
+  { icon: Headset, title: "IT Support", text: "Troubleshooting, setup and friendly first-line technical help." },
+  { icon: Share2, title: "Social Media Management", text: "Content calendars, community engagement and reporting." },
+  { icon: PenTool, title: "Content Creation", text: "Copy, graphics and Canva visuals aligned to your brand." },
+  { icon: Globe, title: "Website Assistance", text: "Updates, maintenance and simple front-end improvements." },
+  { icon: Briefcase, title: "Administrative Support", text: "Organised data entry, scheduling and document handling." },
+];
+
+export function Services() {
+  return (
+    <Section
+      id="services"
+      eyebrow="Services"
+      title="How I can help"
+      lead="Flexible support for small teams and growing businesses."
+      muted
+    >
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {SERVICES.map(({ icon: Icon, title, text }) => (
+          <Card key={title}>
+            <span className="inline-flex size-11 items-center justify-center rounded-xl bg-accent/20 text-foreground">
+              <Icon className="size-5" />
+            </span>
+            <h3 className="mt-4 text-lg">{title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* -------------------------------- projects -------------------------------- */
+
+const PROJECTS = [
+  {
+    title: "Employee Leave Management System",
+    text: "A web application for requesting, approving and tracking staff leave with role-based dashboards.",
+    tags: ["PHP", "MySQL", "JavaScript", "CSS"],
+  },
+  {
+    title: "BossesFit Digital Marketing Campaign",
+    text: "End-to-end campaign covering audience research, content calendar and performance reporting.",
+    tags: ["Social Media", "Content", "Analytics"],
+  },
+  {
+    title: "SEO Strategy Projects",
+    text: "Keyword research, on-page optimisation and technical fixes that improved organic visibility.",
+    tags: ["SEO", "Keyword Research", "GA4"],
+  },
+  {
+    title: "Social Media Campaigns",
+    text: "Creative concepts and Canva assets produced for product launches and awareness pushes.",
+    tags: ["Canva", "Copywriting", "Instagram"],
+  },
+];
+
+export function Projects() {
+  return (
+    <Section
+      id="projects"
+      eyebrow="Projects"
+      title="Selected work"
+      lead="A snapshot of the projects I've built and the campaigns I've run."
+    >
+      <div className="grid gap-5 sm:grid-cols-2">
+        {PROJECTS.map((p) => (
+          <Card key={p.title} className="flex flex-col overflow-hidden !p-0">
+            <div
+              className="flex h-36 items-end p-5"
+              style={{ backgroundImage: "var(--gradient-hero)" }}
+            >
+              <span className="inline-flex size-10 items-center justify-center rounded-xl bg-card text-primary shadow-[var(--shadow-soft)]">
+                <Rocket className="size-5" />
+              </span>
+            </div>
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-lg">{p.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {p.tags.map((t) => (
+                  <li key={t}>
+                    <Tag>{t}</Tag>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 flex gap-2 pt-2">
+                <a
+                  href="#contact"
+                  className="rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
+                >
+                  Live demo
+                </a>
+                <a
+                  href="#contact"
+                  className="rounded-full border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
+                >
+                  Case study
+                </a>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ----------------------------- certifications ----------------------------- */
+
+const CERTS = [
+  { title: "Digital Marketing Professional", issuer: "Training Programme", year: "2025" },
+  { title: "Google Analytics Fundamentals", issuer: "Google", year: "2025" },
+  { title: "SEO Essentials", issuer: "Online Certification", year: "2024" },
+  { title: "Customer Service Excellence", issuer: "Professional Course", year: "2024" },
+];
+
+export function Certifications() {
+  return (
+    <Section
+      id="certifications"
+      eyebrow="Certifications"
+      title="Continuous learning"
+      lead="Placeholders ready for your certificate names, issuers and dates."
+      muted
+    >
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {CERTS.map((c) => (
+          <Card key={c.title}>
+            <span className="inline-flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <Award className="size-5" />
+            </span>
+            <h3 className="mt-4 text-base">{c.title}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{c.issuer}</p>
+            <p className="mt-3 font-mono text-xs text-primary">{c.year}</p>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* -------------------------- experience / education ------------------------- */
+
+function Timeline({
+  items,
+}: {
+  items: { title: string; org: string; period: string; text: string }[];
+}) {
+  return (
+    <ol className="relative space-y-6 border-l border-border pl-6">
+      {items.map((i) => (
+        <li key={i.title + i.period} className="relative">
+          <span className="absolute -left-[31px] top-6 size-3 rounded-full border-2 border-card bg-primary" />
+          <Card>
+            <p className="font-mono text-xs text-primary">{i.period}</p>
+            <h3 className="mt-2 text-lg">{i.title}</h3>
+            <p className="text-sm text-muted-foreground">{i.org}</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.text}</p>
+          </Card>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+export function Experience() {
+  return (
+    <Section
+      id="experience"
+      eyebrow="Experience"
+      title="Where I've worked"
+      lead="Placeholder entries — swap in your roles, dates and achievements."
+    >
+      <Timeline
+        items={[
+          {
+            title: "Digital Marketing Assistant",
+            org: "Company name",
+            period: "2025 — Present",
+            text: "Planned and scheduled social content, tracked performance in Google Analytics and supported SEO improvements.",
+          },
+          {
+            title: "IT Support Volunteer",
+            org: "Organisation name",
+            period: "2024 — 2025",
+            text: "Resolved first-line hardware and software issues and documented common fixes for the team.",
+          },
+          {
+            title: "Customer Service Representative",
+            org: "Company name",
+            period: "2023 — 2024",
+            text: "Handled customer enquiries with a calm, solutions-first approach and maintained accurate records.",
+          },
+        ]}
+      />
+    </Section>
+  );
+}
+
+export function Education() {
+  return (
+    <Section
+      id="education"
+      eyebrow="Education"
+      title="Academic & professional training"
+      muted
+    >
+      <div className="grid gap-5 sm:grid-cols-2">
+        {[
+          {
+            icon: GraduationCap,
+            title: "BSc Computer Science",
+            org: "University name",
+            period: "Graduated",
+            text: "Software development, databases, networking and problem solving.",
+          },
+          {
+            icon: Sparkles,
+            title: "Digital Marketing Training",
+            org: "Training institute",
+            period: "Certified",
+            text: "SEO, SEM, social media, content marketing, analytics and graphic design.",
+          },
+        ].map(({ icon: Icon, ...e }) => (
+          <Card key={e.title}>
+            <span className="inline-flex size-11 items-center justify-center rounded-xl bg-teal/15 text-teal">
+              <Icon className="size-5" />
+            </span>
+            <p className="mt-4 font-mono text-xs text-primary">{e.period}</p>
+            <h3 className="mt-1 text-lg">{e.title}</h3>
+            <p className="text-sm text-muted-foreground">{e.org}</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.text}</p>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ------------------------------ testimonials ------------------------------ */
+
+export function Testimonials() {
+  return (
+    <Section
+      id="testimonials"
+      eyebrow="Testimonials"
+      title="Kind words"
+      lead="Ready for real quotes from colleagues, lecturers and clients."
+    >
+      <div className="grid gap-5 sm:grid-cols-3">
+        {[1, 2, 3].map((i) => (
+          <Card key={i}>
+            <Quote className="size-6 text-accent" />
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              &ldquo;A testimonial will appear here — a short note about working with Esther, her
+              reliability and the results delivered.&rdquo;
+            </p>
+            <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
+              <span className="size-9 rounded-full bg-secondary" />
+              <div>
+                <p className="text-sm font-medium">Name placeholder</p>
+                <p className="font-mono text-xs text-muted-foreground">Role, Company</p>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* --------------------------------- contact -------------------------------- */
+
+const CONTACTS = [
+  { icon: Mail, label: "Email", value: "esther.otoo@example.com", href: "mailto:esther.otoo@example.com" },
+  { icon: Linkedin, label: "LinkedIn", value: "/in/estherotoo", href: "#" },
+  { icon: Github, label: "GitHub", value: "@estherotoo", href: "#" },
+  { icon: MapPin, label: "Location", value: "Accra, Ghana", href: undefined },
+];
+
+export function Contact() {
+  const [sending, setSending] = useState(false);
+
+  return (
+    <Section
+      id="contact"
+      eyebrow="Contact"
+      title="Let's work together"
+      lead="Open to digital marketing, IT support, customer service and administrative roles."
+      muted
+    >
+      <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          {CONTACTS.map(({ icon: Icon, label, value, href }) => {
+            const inner = (
+              <>
+                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="size-5" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-mono text-xs text-muted-foreground">{label}</span>
+                  <span className="block truncate text-sm text-foreground">{value}</span>
+                </span>
+              </>
+            );
+            return href ? (
+              <a key={label} href={href} className="card-surface card-hover flex items-center gap-4 p-5">
+                {inner}
+              </a>
+            ) : (
+              <div key={label} className="card-surface flex items-center gap-4 p-5">
+                {inner}
+              </div>
+            );
+          })}
+        </div>
+
+        <form
+          className="card-surface grid gap-4 p-6 sm:p-8"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setSending(true);
+            window.setTimeout(() => {
+              setSending(false);
+              (e.target as HTMLFormElement).reset();
+              toast.success("Thanks! Your message has been noted.");
+            }, 700);
+          }}
+        >
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="grid gap-2 text-sm">
+              <span className="text-muted-foreground">Name</span>
+              <input
+                required
+                name="name"
+                className="rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                placeholder="Your name"
+              />
+            </label>
+            <label className="grid gap-2 text-sm">
+              <span className="text-muted-foreground">Email</span>
+              <input
+                required
+                type="email"
+                name="email"
+                className="rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                placeholder="you@email.com"
+              />
+            </label>
+          </div>
+          <label className="grid gap-2 text-sm">
+            <span className="text-muted-foreground">Subject</span>
+            <input
+              name="subject"
+              className="rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+              placeholder="Role or project"
+            />
+          </label>
+          <label className="grid gap-2 text-sm">
+            <span className="text-muted-foreground">Message</span>
+            <textarea
+              required
+              name="message"
+              rows={5}
+              className="resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+              placeholder="Tell me a little about the opportunity…"
+            />
+          </label>
+          <button
+            type="submit"
+            disabled={sending}
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5 disabled:opacity-70"
+          >
+            <Send className="size-4" /> {sending ? "Sending…" : "Send message"}
+          </button>
+          <p className="flex items-center gap-2 text-xs text-muted-foreground">
+            <MessageSquare className="size-3.5" /> This form is a front-end demo — connect it to email
+            or a database when you&apos;re ready.
+          </p>
+        </form>
+      </div>
+    </Section>
+  );
+}
+
+/* --------------------------------- footer --------------------------------- */
+
+export function Footer() {
+  return (
+    <footer className="border-t border-border py-10">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 px-5 sm:flex-row sm:px-8">
+        <p className="font-display text-sm font-semibold">
+          Esther Otoo<span className="text-primary">.</span>
+        </p>
+        <p className="text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Esther Otoo. All rights reserved.
+        </p>
+        <div className="flex items-center gap-2">
+          {[
+            { icon: Linkedin, label: "LinkedIn" },
+            { icon: Github, label: "GitHub" },
+            { icon: Mail, label: "Email" },
+            { icon: Search, label: "Portfolio" },
+          ].map(({ icon: Icon, label }) => (
+            <a
+              key={label}
+              href="#contact"
+              aria-label={label}
+              className="inline-flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+            >
+              <Icon className="size-4" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
+}
