@@ -1,11 +1,12 @@
 import { Download, Mail, MapPin } from "lucide-react";
 import avatar from "@/assets/avatar.jpg";
+import cvAsset from "@/assets/cv.pdf.asset.json";
 import { useCounter, useMagnetic, useTyping } from "./hooks";
 
 const PHRASES = [
+  "Freelance Digital Marketer",
   "Computer Science Graduate",
-  "Digital Marketer",
-  "IT Support Enthusiast",
+  "Going Beyond Clicks",
 ];
 
 function Stat({ value, suffix, label }: { value: number; suffix?: string; label: string }) {
@@ -58,7 +59,7 @@ export function Hero() {
           </span>
 
           <h1 className="mt-5 text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Hi, I&apos;m <span className="gradient-text">Esther Otoo</span>
+            Hi, I&apos;m <span className="gradient-text">Esther N. Otoo</span>
           </h1>
 
           <p
@@ -72,15 +73,16 @@ export function Hero() {
           </p>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-            I blend a Computer Science foundation with hands-on digital marketing skills — building,
-            supporting and promoting digital experiences. I love solving problems, learning fast and
-            helping businesses grow online.
+            Behind every click is an opportunity to build meaningful connections and grow a brand. I
+            combine strategy, creativity and data-driven insight to help businesses strengthen their
+            online presence — always going Beyond Clicks.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               ref={cvRef}
-              href="#contact"
+              href={cvAsset.url}
+              download="Esther-Otoo-Portfolio.pdf"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-lift)] transition-[transform,box-shadow] duration-300"
             >
               <Download className="size-4" /> Download CV
@@ -95,7 +97,7 @@ export function Hero() {
           </div>
 
           <div className="mt-9 grid grid-cols-3 gap-4 border-t border-border pt-6">
-            <Stat value={20} suffix="+" label="Skills & tools" />
+            <Stat value={4} suffix="" label="Roles & internships" />
             <Stat value={6} suffix="" label="Services offered" />
             <Stat value={4} suffix="+" label="Featured projects" />
           </div>
@@ -106,18 +108,18 @@ export function Hero() {
           <div className="card-surface overflow-hidden rounded-[2rem] p-3">
             <img
               src={avatar}
-              alt="Portrait of Esther Otoo, Computer Science graduate and digital marketer"
+            alt="Portrait of Esther Ntiamoah Otoo, freelance digital marketer and Computer Science graduate"
               width={816}
               height={816}
               className="aspect-square w-full rounded-3xl object-cover"
             />
             <div className="flex items-center justify-between px-3 py-4">
               <div>
-                <p className="font-display text-sm font-semibold">Esther Otoo</p>
-                <p className="font-mono text-xs text-muted-foreground">CS • Digital Marketing</p>
+                <p className="font-display text-sm font-semibold">Esther N. Otoo</p>
+                <p className="font-mono text-xs text-muted-foreground">Beyond Clicks</p>
               </div>
               <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-3 py-1 text-xs text-muted-foreground">
-                <MapPin className="size-3.5" /> Ghana
+                <MapPin className="size-3.5" /> Accra, Ghana
               </span>
             </div>
           </div>

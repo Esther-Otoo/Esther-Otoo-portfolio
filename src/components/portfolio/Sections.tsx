@@ -16,6 +16,7 @@ import {
   Megaphone,
   MessageSquare,
   PenTool,
+  Phone,
   Quote,
   Rocket,
   Search,
@@ -72,10 +73,10 @@ function Tag({ children }: { children: ReactNode }) {
 /* ---------------------------------- about --------------------------------- */
 
 const HIGHLIGHTS = [
-  { icon: Code2, title: "Computer Science background", text: "Web development, databases and software fundamentals." },
-  { icon: Megaphone, title: "Digital marketing training", text: "SEO, SEM, social media, content and email marketing." },
-  { icon: Brain, title: "Analytical thinking", text: "Data-informed decisions with Google Analytics and research." },
-  { icon: Heart, title: "Growth mindset", text: "Fast learner, strong communicator and dependable teammate." },
+  { icon: Code2, title: "Computer Science graduate", text: "BSc Computer Science from KNUST — web development, databases and problem solving." },
+  { icon: Megaphone, title: "Digital marketing training", text: "Generation Ghana bootcamp: SEO, social media, paid ads, email marketing and analytics." },
+  { icon: Brain, title: "Data-driven strategy", text: "Analysing campaign results to find opportunities and make measurable recommendations." },
+  { icon: Heart, title: "Beyond Clicks", text: "Marketing that builds lasting value and real connections, not just traffic." },
 ];
 
 export function About() {
@@ -83,8 +84,8 @@ export function About() {
     <Section
       id="about"
       eyebrow="About me"
-      title="A technologist with a marketer's instinct"
-      lead="I'm a Computer Science graduate with professional digital marketing training. I enjoy the space where technology meets people — building and maintaining websites, running campaigns that reach the right audience, and supporting users so technology feels effortless."
+      title="Behind every click is an opportunity"
+      lead="Hello, I'm Esther N. Otoo — a freelance digital marketer and Computer Science graduate. Brands need someone who combines strategy, creativity and data-driven insight to grow their online presence. Beyond Clicks reflects my belief that successful marketing isn't just about traffic — it's about creating lasting value and measurable impact."
       muted
     >
       <div className="grid gap-5 sm:grid-cols-2">
@@ -210,24 +211,24 @@ export function Services() {
 
 const PROJECTS = [
   {
-    title: "Employee Leave Management System",
-    text: "A web application for requesting, approving and tracking staff leave with role-based dashboards.",
-    tags: ["PHP", "MySQL", "JavaScript", "CSS"],
+    title: "DUSSUS — For The Boss Within",
+    text: "Brand and campaign concept for an all-genders clothing store: positioning as affordable luxury, a launch offer for the first 50 shoppers, and creatives across tops, bottoms, footwear and accessories.",
+    tags: ["Brand Strategy", "Campaign", "Canva"],
   },
   {
-    title: "BossesFit Digital Marketing Campaign",
-    text: "End-to-end campaign covering audience research, content calendar and performance reporting.",
-    tags: ["Social Media", "Content", "Analytics"],
+    title: "Wares — Product Catalogue Launch",
+    text: "Digital catalogue and web presence for a homeware range, with clear product storytelling across sizes and colours to make browsing effortless on mobile and tablet.",
+    tags: ["Content", "Web", "E-commerce"],
   },
   {
-    title: "SEO Strategy Projects",
-    text: "Keyword research, on-page optimisation and technical fixes that improved organic visibility.",
-    tags: ["SEO", "Keyword Research", "GA4"],
+    title: "Data-Informed Campaign Plan",
+    text: "Built and presented a full campaign plan during the Generation Ghana bootcamp — audience research, channel mix, budget and KPIs, with post-campaign analysis and optimisation recommendations.",
+    tags: ["Paid Ads", "Analytics", "Strategy"],
   },
   {
-    title: "Social Media Campaigns",
-    text: "Creative concepts and Canva assets produced for product launches and awareness pushes.",
-    tags: ["Canva", "Copywriting", "Instagram"],
+    title: "SEO & Social Growth Sprint",
+    text: "Keyword research, on-page optimisation and a content calendar designed to lift organic visibility and sustain engagement week over week.",
+    tags: ["SEO", "Keyword Research", "Social Media"],
   },
 ];
 
@@ -237,7 +238,7 @@ export function Projects() {
       id="projects"
       eyebrow="Projects"
       title="Selected work"
-      lead="A snapshot of the projects I've built and the campaigns I've run."
+      lead="Where strategy meets creativity — projects that analyse the challenge, tailor the solution and deliver lasting business impact."
     >
       <div className="grid gap-5 sm:grid-cols-2">
         {PROJECTS.map((p) => (
@@ -285,10 +286,10 @@ export function Projects() {
 /* ----------------------------- certifications ----------------------------- */
 
 const CERTS = [
-  { title: "Digital Marketing Professional", issuer: "Training Programme", year: "2025" },
-  { title: "Google Analytics Fundamentals", issuer: "Google", year: "2025" },
-  { title: "SEO Essentials", issuer: "Online Certification", year: "2024" },
-  { title: "Customer Service Excellence", issuer: "Professional Course", year: "2024" },
+  { title: "Digital Marketing Bootcamp", issuer: "Generation Ghana", year: "2026" },
+  { title: "BSc Computer Science", issuer: "KNUST", year: "2026" },
+  { title: "National Service Certificate", issuer: "DVLA, Ghana", year: "2024" },
+  { title: "IT Internship", issuer: "Tema Oil Refinery", year: "2022" },
 ];
 
 export function Certifications() {
@@ -297,7 +298,7 @@ export function Certifications() {
       id="certifications"
       eyebrow="Certifications"
       title="Continuous learning"
-      lead="Placeholders ready for your certificate names, issuers and dates."
+      lead="Training and credentials that back up the work."
       muted
     >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -346,27 +347,33 @@ export function Experience() {
       id="experience"
       eyebrow="Experience"
       title="Where I've worked"
-      lead="Placeholder entries — swap in your roles, dates and achievements."
+      lead="Marketing, technology and customer-facing roles across Ghana."
     >
       <Timeline
         items={[
           {
-            title: "Digital Marketing Assistant",
-            org: "Company name",
-            period: "2025 — Present",
-            text: "Planned and scheduled social content, tracked performance in Google Analytics and supported SEO improvements.",
+            title: "Digital Marketing Bootcamp Trainee",
+            org: "Generation Ghana — Remote",
+            period: "May — Aug 2026",
+            text: "Built practical skills in SEO, social media, paid advertising, email marketing and analytics. Developed and presented data-informed campaign plans, analysed results to identify optimisation opportunities, and collaborated with cross-functional teams on client presentations under tight deadlines.",
           },
           {
-            title: "IT Support Volunteer",
-            org: "Organisation name",
-            period: "2024 — 2025",
-            text: "Resolved first-line hardware and software issues and documented common fixes for the team.",
+            title: "National Service Personnel",
+            org: "Driver and Vehicle Licensing Authority (DVLA)",
+            period: "Nov 2023 — Oct 2024",
+            text: "Supported daily vehicle registration and licensing operations with a focus on data accuracy, delivered customer service and administrative assistance, and worked with teams to streamline processes and improve customer satisfaction.",
           },
           {
-            title: "Customer Service Representative",
-            org: "Company name",
-            period: "2023 — 2024",
-            text: "Handled customer enquiries with a calm, solutions-first approach and maintained accurate records.",
+            title: "IT Intern",
+            org: "Tema Oil Refinery — Tema",
+            period: "Oct 2022 — Dec 2022",
+            text: "Performed computer system maintenance, repairs and software installation, and assisted with document management, printing and data processing. Produced detailed reports used for operational decision-making.",
+          },
+          {
+            title: "Customer Service Intern",
+            org: "Goldmaxx Security Company — Accra",
+            period: "Oct 2021 — Nov 2021",
+            text: "Handled client and employee enquiries by phone, email and in person, supported HR with attendance records and payroll, and improved customer satisfaction through clear communication and follow-ups.",
           },
         ]}
       />
@@ -387,16 +394,16 @@ export function Education() {
           {
             icon: GraduationCap,
             title: "BSc Computer Science",
-            org: "University name",
-            period: "Graduated",
-            text: "Software development, databases, networking and problem solving.",
+            org: "Kwame Nkrumah University of Science and Technology (KNUST)",
+            period: "2026",
+            text: "Software development, databases, networking and problem solving — the technical foundation behind my marketing work.",
           },
           {
             icon: Sparkles,
-            title: "Digital Marketing Training",
-            org: "Training institute",
-            period: "Certified",
-            text: "SEO, SEM, social media, content marketing, analytics and graphic design.",
+            title: "Digital Marketing Bootcamp Training",
+            org: "Generation Ghana",
+            period: "2026",
+            text: "SEO, social media marketing, paid advertising, email marketing and analytics, delivered through hands-on projects.",
           },
         ].map(({ icon: Icon, ...e }) => (
           <Card key={e.title}>
@@ -414,31 +421,31 @@ export function Education() {
   );
 }
 
-/* ------------------------------ testimonials ------------------------------ */
+/* ---------------------------- vision & mission ---------------------------- */
 
-export function Testimonials() {
+export function VisionMission() {
   return (
     <Section
-      id="testimonials"
-      eyebrow="Testimonials"
-      title="Kind words"
-      lead="Ready for real quotes from colleagues, lecturers and clients."
+      id="vision"
+      eyebrow="Vision & Mission"
+      title="Going Beyond Clicks"
+      lead="The principles that guide every campaign I plan and every brand I work with."
     >
-      <div className="grid gap-5 sm:grid-cols-3">
-        {[1, 2, 3].map((i) => (
-          <Card key={i}>
+      <div className="grid gap-5 sm:grid-cols-2">
+        {[
+          {
+            label: "Vision",
+            text: "To inspire business growth by delivering innovative digital marketing strategies that cultivate meaningful connections, enhance brand credibility, and create lasting value in an ever-evolving digital landscape.",
+          },
+          {
+            label: "Mission",
+            text: "To empower businesses with strategic, creative and insight-driven digital marketing solutions that elevate their online presence, strengthen audience engagement, and generate measurable results — always going Beyond Clicks.",
+          },
+        ].map((v) => (
+          <Card key={v.label}>
             <Quote className="size-6 text-accent" />
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              &ldquo;A testimonial will appear here — a short note about working with Esther, her
-              reliability and the results delivered.&rdquo;
-            </p>
-            <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
-              <span className="size-9 rounded-full bg-secondary" />
-              <div>
-                <p className="text-sm font-medium">Name placeholder</p>
-                <p className="font-mono text-xs text-muted-foreground">Role, Company</p>
-              </div>
-            </div>
+            <h3 className="mt-4 text-lg">{v.label}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
           </Card>
         ))}
       </div>
@@ -449,9 +456,9 @@ export function Testimonials() {
 /* --------------------------------- contact -------------------------------- */
 
 const CONTACTS = [
-  { icon: Mail, label: "Email", value: "esther.otoo@example.com", href: "mailto:esther.otoo@example.com" },
-  { icon: Linkedin, label: "LinkedIn", value: "/in/estherotoo", href: "#" },
-  { icon: Github, label: "GitHub", value: "@estherotoo", href: "#" },
+  { icon: Mail, label: "Email", value: "otooest@gmail.com", href: "mailto:otooest@gmail.com" },
+  { icon: Phone, label: "Telephone", value: "+233 558 521 997", href: "tel:+233558521997" },
+  { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: "https://www.linkedin.com/" },
   { icon: MapPin, label: "Location", value: "Accra, Ghana", href: undefined },
 ];
 
@@ -462,8 +469,8 @@ export function Contact() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title="Let's work together"
-      lead="Open to digital marketing, IT support, customer service and administrative roles."
+      title="Let's work together!"
+      lead="Every successful brand begins with a meaningful conversation. Whether you want to strengthen your online presence, improve your marketing strategy or bring a new idea to life, I'd love to collaborate."
       muted
     >
       <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
