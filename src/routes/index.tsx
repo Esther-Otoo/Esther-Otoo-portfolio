@@ -12,7 +12,7 @@ import {
   Projects,
   Services,
   Skills,
-  Testimonials,
+  VisionMission,
 } from "@/components/portfolio/Sections";
 
 const TITLE = "Esther Otoo — Computer Science Graduate & Digital Marketer";
@@ -55,13 +55,13 @@ function Index() {
       <main>
         <Hero />
         <About />
+        <VisionMission />
         <Skills />
         <Services />
         <Projects />
         <Certifications />
         <Experience />
         <Education />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />
