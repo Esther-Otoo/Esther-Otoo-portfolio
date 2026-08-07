@@ -420,31 +420,31 @@ export function Education() {
   );
 }
 
-/* ------------------------------ testimonials ------------------------------ */
+/* ---------------------------- vision & mission ---------------------------- */
 
-export function Testimonials() {
+export function VisionMission() {
   return (
     <Section
-      id="testimonials"
-      eyebrow="Testimonials"
-      title="Kind words"
-      lead="Ready for real quotes from colleagues, lecturers and clients."
+      id="vision"
+      eyebrow="Vision & Mission"
+      title="Going Beyond Clicks"
+      lead="The principles that guide every campaign I plan and every brand I work with."
     >
-      <div className="grid gap-5 sm:grid-cols-3">
-        {[1, 2, 3].map((i) => (
-          <Card key={i}>
+      <div className="grid gap-5 sm:grid-cols-2">
+        {[
+          {
+            label: "Vision",
+            text: "To inspire business growth by delivering innovative digital marketing strategies that cultivate meaningful connections, enhance brand credibility, and create lasting value in an ever-evolving digital landscape.",
+          },
+          {
+            label: "Mission",
+            text: "To empower businesses with strategic, creative and insight-driven digital marketing solutions that elevate their online presence, strengthen audience engagement, and generate measurable results — always going Beyond Clicks.",
+          },
+        ].map((v) => (
+          <Card key={v.label}>
             <Quote className="size-6 text-accent" />
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              &ldquo;A testimonial will appear here — a short note about working with Esther, her
-              reliability and the results delivered.&rdquo;
-            </p>
-            <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
-              <span className="size-9 rounded-full bg-secondary" />
-              <div>
-                <p className="text-sm font-medium">Name placeholder</p>
-                <p className="font-mono text-xs text-muted-foreground">Role, Company</p>
-              </div>
-            </div>
+            <h3 className="mt-4 text-lg">{v.label}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
           </Card>
         ))}
       </div>
@@ -455,9 +455,9 @@ export function Testimonials() {
 /* --------------------------------- contact -------------------------------- */
 
 const CONTACTS = [
-  { icon: Mail, label: "Email", value: "esther.otoo@example.com", href: "mailto:esther.otoo@example.com" },
-  { icon: Linkedin, label: "LinkedIn", value: "/in/estherotoo", href: "#" },
-  { icon: Github, label: "GitHub", value: "@estherotoo", href: "#" },
+  { icon: Mail, label: "Email", value: "otooest@gmail.com", href: "mailto:otooest@gmail.com" },
+  { icon: Phone, label: "Telephone", value: "+233 558 521 997", href: "tel:+233558521997" },
+  { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: "https://www.linkedin.com/" },
   { icon: MapPin, label: "Location", value: "Accra, Ghana", href: undefined },
 ];
 
@@ -468,8 +468,8 @@ export function Contact() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title="Let's work together"
-      lead="Open to digital marketing, IT support, customer service and administrative roles."
+      title="Let's work together!"
+      lead="Every successful brand begins with a meaningful conversation. Whether you want to strengthen your online presence, improve your marketing strategy or bring a new idea to life, I'd love to collaborate."
       muted
     >
       <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
