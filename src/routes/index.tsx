@@ -15,9 +15,9 @@ import {
   VisionMission,
 } from "@/components/portfolio/Sections";
 
-const TITLE = "Esther Otoo — Computer Science Graduate & Digital Marketer";
+const TITLE = "Esther N. Otoo — Freelance Digital Marketer | Beyond Clicks";
 const DESCRIPTION =
-  "Portfolio of Esther Otoo: Computer Science graduate and digital marketer skilled in SEO, social media, IT support and customer service.";
+  "Beyond Clicks: portfolio of Esther Ntiamoah Otoo, freelance digital marketer and KNUST Computer Science graduate in Accra — SEO, social media, paid ads and analytics.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -38,10 +38,19 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          name: "Esther Otoo",
-          jobTitle: "Digital Marketer & IT Support Professional",
+          name: "Esther Ntiamoah Otoo",
+          jobTitle: "Freelance Digital Marketer",
+          email: "otooest@gmail.com",
+          telephone: "+233558521997",
+          address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
           description: DESCRIPTION,
-          knowsAbout: ["SEO", "SEM", "Social Media Marketing", "IT Support", "Web Development"],
+          knowsAbout: [
+            "SEO",
+            "Social Media Marketing",
+            "Paid Advertising",
+            "Email Marketing",
+            "Marketing Analytics",
+          ],
         }),
       },
     ],
