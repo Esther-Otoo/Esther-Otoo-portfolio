@@ -346,27 +346,33 @@ export function Experience() {
       id="experience"
       eyebrow="Experience"
       title="Where I've worked"
-      lead="Placeholder entries — swap in your roles, dates and achievements."
+      lead="Marketing, technology and customer-facing roles across Ghana."
     >
       <Timeline
         items={[
           {
-            title: "Digital Marketing Assistant",
-            org: "Company name",
-            period: "2025 — Present",
-            text: "Planned and scheduled social content, tracked performance in Google Analytics and supported SEO improvements.",
+            title: "Digital Marketing Bootcamp Trainee",
+            org: "Generation Ghana — Remote",
+            period: "May — Aug 2026",
+            text: "Built practical skills in SEO, social media, paid advertising, email marketing and analytics. Developed and presented data-informed campaign plans, analysed results to identify optimisation opportunities, and collaborated with cross-functional teams on client presentations under tight deadlines.",
           },
           {
-            title: "IT Support Volunteer",
-            org: "Organisation name",
-            period: "2024 — 2025",
-            text: "Resolved first-line hardware and software issues and documented common fixes for the team.",
+            title: "National Service Personnel",
+            org: "Driver and Vehicle Licensing Authority (DVLA)",
+            period: "Nov 2023 — Oct 2024",
+            text: "Supported daily vehicle registration and licensing operations with a focus on data accuracy, delivered customer service and administrative assistance, and worked with teams to streamline processes and improve customer satisfaction.",
           },
           {
-            title: "Customer Service Representative",
-            org: "Company name",
-            period: "2023 — 2024",
-            text: "Handled customer enquiries with a calm, solutions-first approach and maintained accurate records.",
+            title: "IT Intern",
+            org: "Tema Oil Refinery — Tema",
+            period: "Oct 2022 — Dec 2022",
+            text: "Performed computer system maintenance, repairs and software installation, and assisted with document management, printing and data processing. Produced detailed reports used for operational decision-making.",
+          },
+          {
+            title: "Customer Service Intern",
+            org: "Goldmaxx Security Company — Accra",
+            period: "Oct 2021 — Nov 2021",
+            text: "Handled client and employee enquiries by phone, email and in person, supported HR with attendance records and payroll, and improved customer satisfaction through clear communication and follow-ups.",
           },
         ]}
       />
@@ -387,16 +393,16 @@ export function Education() {
           {
             icon: GraduationCap,
             title: "BSc Computer Science",
-            org: "University name",
-            period: "Graduated",
-            text: "Software development, databases, networking and problem solving.",
+            org: "Kwame Nkrumah University of Science and Technology (KNUST)",
+            period: "2026",
+            text: "Software development, databases, networking and problem solving — the technical foundation behind my marketing work.",
           },
           {
             icon: Sparkles,
-            title: "Digital Marketing Training",
-            org: "Training institute",
-            period: "Certified",
-            text: "SEO, SEM, social media, content marketing, analytics and graphic design.",
+            title: "Digital Marketing Bootcamp Training",
+            org: "Generation Ghana",
+            period: "2026",
+            text: "SEO, social media marketing, paid advertising, email marketing and analytics, delivered through hands-on projects.",
           },
         ].map(({ icon: Icon, ...e }) => (
           <Card key={e.title}>
