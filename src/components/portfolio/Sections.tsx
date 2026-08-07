@@ -263,13 +263,13 @@ export function Projects() {
               </ul>
               <div className="mt-6 flex gap-2 pt-2">
                 <a
-                  href="#contact"
+                  href={`mailto:otooest@gmail.com?subject=${encodeURIComponent(`Live demo request: ${p.title}`)}&body=${encodeURIComponent(`Hello Esther, I would like to see the live work for ${p.title}.`)}`}
                   className="rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
                 >
                   Live demo
                 </a>
                 <a
-                  href="#contact"
+                  href={`mailto:otooest@gmail.com?subject=${encodeURIComponent(`Case study request: ${p.title}`)}&body=${encodeURIComponent(`Hello Esther, please share the case study for ${p.title}.`)}`}
                   className="rounded-full border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
                 >
                   Case study
@@ -505,10 +505,20 @@ export function Contact() {
           onSubmit={(e) => {
             e.preventDefault();
             setSending(true);
+            const form = e.target as HTMLFormElement;
+            const data = new FormData(form);
+            const name = String(data.get("name") ?? "");
+            const email = String(data.get("email") ?? "");
+            const subject = String(data.get("subject") ?? "") || "Portfolio enquiry";
+            const message = String(data.get("message") ?? "");
+            const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+            window.location.href = `mailto:otooest@gmail.com?subject=${encodeURIComponent(
+              subject,
+            )}&body=${encodeURIComponent(body)}`;
             window.setTimeout(() => {
               setSending(false);
-              (e.target as HTMLFormElement).reset();
-              toast.success("Thanks! Your message has been noted.");
+              form.reset();
+              toast.success("Your email app is opening with the message ready to send.");
             }, 700);
           }}
         >
@@ -559,8 +569,8 @@ export function Contact() {
             <Send className="size-4" /> {sending ? "Sending…" : "Send message"}
           </button>
           <p className="flex items-center gap-2 text-xs text-muted-foreground">
-            <MessageSquare className="size-3.5" /> This form is a front-end demo, connect it to email
-            or a database when you&apos;re ready.
+            <MessageSquare className="size-3.5" /> Sending opens your email app with the message
+            addressed to otooest@gmail.com.
           </p>
         </form>
       </div>
