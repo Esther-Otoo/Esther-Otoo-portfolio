@@ -72,10 +72,10 @@ function Tag({ children }: { children: ReactNode }) {
 /* ---------------------------------- about --------------------------------- */
 
 const HIGHLIGHTS = [
-  { icon: Code2, title: "Computer Science background", text: "Web development, databases and software fundamentals." },
-  { icon: Megaphone, title: "Digital marketing training", text: "SEO, SEM, social media, content and email marketing." },
-  { icon: Brain, title: "Analytical thinking", text: "Data-informed decisions with Google Analytics and research." },
-  { icon: Heart, title: "Growth mindset", text: "Fast learner, strong communicator and dependable teammate." },
+  { icon: Code2, title: "Computer Science graduate", text: "BSc Computer Science from KNUST — web development, databases and problem solving." },
+  { icon: Megaphone, title: "Digital marketing training", text: "Generation Ghana bootcamp: SEO, social media, paid ads, email marketing and analytics." },
+  { icon: Brain, title: "Data-driven strategy", text: "Analysing campaign results to find opportunities and make measurable recommendations." },
+  { icon: Heart, title: "Beyond Clicks", text: "Marketing that builds lasting value and real connections, not just traffic." },
 ];
 
 export function About() {
@@ -83,8 +83,8 @@ export function About() {
     <Section
       id="about"
       eyebrow="About me"
-      title="A technologist with a marketer's instinct"
-      lead="I'm a Computer Science graduate with professional digital marketing training. I enjoy the space where technology meets people — building and maintaining websites, running campaigns that reach the right audience, and supporting users so technology feels effortless."
+      title="Behind every click is an opportunity"
+      lead="Hello, I'm Esther N. Otoo — a freelance digital marketer and Computer Science graduate. Brands need someone who combines strategy, creativity and data-driven insight to grow their online presence. Beyond Clicks reflects my belief that successful marketing isn't just about traffic — it's about creating lasting value and measurable impact."
       muted
     >
       <div className="grid gap-5 sm:grid-cols-2">
