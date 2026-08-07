@@ -75,7 +75,7 @@ export function Hero() {
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
             Behind every click is an opportunity to build meaningful connections and grow a brand. I
             combine strategy, creativity and data-driven insight to help businesses strengthen their
-            online presence — always going Beyond Clicks.
+            online presence, always going Beyond Clicks.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
