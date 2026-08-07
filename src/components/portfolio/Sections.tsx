@@ -73,7 +73,7 @@ function Tag({ children }: { children: ReactNode }) {
 /* ---------------------------------- about --------------------------------- */
 
 const HIGHLIGHTS = [
-  { icon: Code2, title: "Computer Science graduate", text: "BSc Computer Science from KNUST — web development, databases and problem solving." },
+  { icon: Code2, title: "Computer Science graduate", text: "BSc Computer Science from KNUST, web development, databases and problem solving." },
   { icon: Megaphone, title: "Digital marketing training", text: "Generation Ghana bootcamp: SEO, social media, paid ads, email marketing and analytics." },
   { icon: Brain, title: "Data-driven strategy", text: "Analysing campaign results to find opportunities and make measurable recommendations." },
   { icon: Heart, title: "Beyond Clicks", text: "Marketing that builds lasting value and real connections, not just traffic." },
@@ -85,7 +85,7 @@ export function About() {
       id="about"
       eyebrow="About me"
       title="Behind every click is an opportunity"
-      lead="Hello, I'm Esther N. Otoo — a freelance digital marketer and Computer Science graduate. Brands need someone who combines strategy, creativity and data-driven insight to grow their online presence. Beyond Clicks reflects my belief that successful marketing isn't just about traffic — it's about creating lasting value and measurable impact."
+      lead="Hello, I'm Esther N. Otoo, a freelance digital marketer and Computer Science graduate. Brands need someone who combines strategy, creativity and data-driven insight to grow their online presence. Beyond Clicks reflects my belief that successful marketing isn't just about traffic, it's about creating lasting value and measurable impact."
       muted
     >
       <div className="grid gap-5 sm:grid-cols-2">
@@ -211,18 +211,18 @@ export function Services() {
 
 const PROJECTS = [
   {
-    title: "DUSSUS — For The Boss Within",
+    title: "BOSSES: For The Boss Within",
     text: "Brand and campaign concept for an all-genders clothing store: positioning as affordable luxury, a launch offer for the first 50 shoppers, and creatives across tops, bottoms, footwear and accessories.",
     tags: ["Brand Strategy", "Campaign", "Canva"],
   },
   {
-    title: "Wares — Product Catalogue Launch",
+    title: "Wares Product Catalogue Launch",
     text: "Digital catalogue and web presence for a homeware range, with clear product storytelling across sizes and colours to make browsing effortless on mobile and tablet.",
     tags: ["Content", "Web", "E-commerce"],
   },
   {
     title: "Data-Informed Campaign Plan",
-    text: "Built and presented a full campaign plan during the Generation Ghana bootcamp — audience research, channel mix, budget and KPIs, with post-campaign analysis and optimisation recommendations.",
+    text: "Built and presented a full campaign plan during the Generation Ghana bootcamp, audience research, channel mix, budget and KPIs, with post-campaign analysis and optimisation recommendations.",
     tags: ["Paid Ads", "Analytics", "Strategy"],
   },
   {
@@ -238,7 +238,7 @@ export function Projects() {
       id="projects"
       eyebrow="Projects"
       title="Selected work"
-      lead="Where strategy meets creativity — projects that analyse the challenge, tailor the solution and deliver lasting business impact."
+      lead="Where strategy meets creativity, projects that analyse the challenge, tailor the solution and deliver lasting business impact."
     >
       <div className="grid gap-5 sm:grid-cols-2">
         {PROJECTS.map((p) => (
@@ -263,13 +263,13 @@ export function Projects() {
               </ul>
               <div className="mt-6 flex gap-2 pt-2">
                 <a
-                  href="#contact"
+                  href={`mailto:otooest@gmail.com?subject=${encodeURIComponent(`Live demo request: ${p.title}`)}&body=${encodeURIComponent(`Hello Esther, I would like to see the live work for ${p.title}.`)}`}
                   className="rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
                 >
                   Live demo
                 </a>
                 <a
-                  href="#contact"
+                  href={`mailto:otooest@gmail.com?subject=${encodeURIComponent(`Case study request: ${p.title}`)}&body=${encodeURIComponent(`Hello Esther, please share the case study for ${p.title}.`)}`}
                   className="rounded-full border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
                 >
                   Case study
@@ -288,6 +288,7 @@ export function Projects() {
 const CERTS = [
   { title: "Digital Marketing Bootcamp", issuer: "Generation Ghana", year: "2026" },
   { title: "BSc Computer Science", issuer: "KNUST", year: "2026" },
+  { title: "Customer Service", issuer: "Goldmaxx Security Company", year: "2021" },
   { title: "National Service Certificate", issuer: "DVLA, Ghana", year: "2024" },
   { title: "IT Internship", issuer: "Tema Oil Refinery", year: "2022" },
 ];
@@ -353,26 +354,26 @@ export function Experience() {
         items={[
           {
             title: "Digital Marketing Bootcamp Trainee",
-            org: "Generation Ghana — Remote",
-            period: "May — Aug 2026",
+            org: "Generation Ghana, Remote",
+            period: "May to Aug 2026",
             text: "Built practical skills in SEO, social media, paid advertising, email marketing and analytics. Developed and presented data-informed campaign plans, analysed results to identify optimisation opportunities, and collaborated with cross-functional teams on client presentations under tight deadlines.",
           },
           {
             title: "National Service Personnel",
             org: "Driver and Vehicle Licensing Authority (DVLA)",
-            period: "Nov 2023 — Oct 2024",
+            period: "Nov 2023 to Oct 2024",
             text: "Supported daily vehicle registration and licensing operations with a focus on data accuracy, delivered customer service and administrative assistance, and worked with teams to streamline processes and improve customer satisfaction.",
           },
           {
             title: "IT Intern",
-            org: "Tema Oil Refinery — Tema",
-            period: "Oct 2022 — Dec 2022",
+            org: "Tema Oil Refinery, Tema",
+            period: "Oct 2022 to Dec 2022",
             text: "Performed computer system maintenance, repairs and software installation, and assisted with document management, printing and data processing. Produced detailed reports used for operational decision-making.",
           },
           {
             title: "Customer Service Intern",
-            org: "Goldmaxx Security Company — Accra",
-            period: "Oct 2021 — Nov 2021",
+            org: "Goldmaxx Security Company, Accra",
+            period: "Oct 2021 to Nov 2021",
             text: "Handled client and employee enquiries by phone, email and in person, supported HR with attendance records and payroll, and improved customer satisfaction through clear communication and follow-ups.",
           },
         ]}
@@ -396,7 +397,7 @@ export function Education() {
             title: "BSc Computer Science",
             org: "Kwame Nkrumah University of Science and Technology (KNUST)",
             period: "2026",
-            text: "Software development, databases, networking and problem solving — the technical foundation behind my marketing work.",
+            text: "Software development, databases, networking and problem solving, the technical foundation behind my marketing work.",
           },
           {
             icon: Sparkles,
@@ -439,7 +440,7 @@ export function VisionMission() {
           },
           {
             label: "Mission",
-            text: "To empower businesses with strategic, creative and insight-driven digital marketing solutions that elevate their online presence, strengthen audience engagement, and generate measurable results — always going Beyond Clicks.",
+            text: "To empower businesses with strategic, creative and insight-driven digital marketing solutions that elevate their online presence, strengthen audience engagement, and generate measurable results, always going Beyond Clicks.",
           },
         ].map((v) => (
           <Card key={v.label}>
@@ -504,10 +505,20 @@ export function Contact() {
           onSubmit={(e) => {
             e.preventDefault();
             setSending(true);
+            const form = e.target as HTMLFormElement;
+            const data = new FormData(form);
+            const name = String(data.get("name") ?? "");
+            const email = String(data.get("email") ?? "");
+            const subject = String(data.get("subject") ?? "") || "Portfolio enquiry";
+            const message = String(data.get("message") ?? "");
+            const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+            window.location.href = `mailto:otooest@gmail.com?subject=${encodeURIComponent(
+              subject,
+            )}&body=${encodeURIComponent(body)}`;
             window.setTimeout(() => {
               setSending(false);
-              (e.target as HTMLFormElement).reset();
-              toast.success("Thanks! Your message has been noted.");
+              form.reset();
+              toast.success("Your email app is opening with the message ready to send.");
             }, 700);
           }}
         >
@@ -558,8 +569,8 @@ export function Contact() {
             <Send className="size-4" /> {sending ? "Sending…" : "Send message"}
           </button>
           <p className="flex items-center gap-2 text-xs text-muted-foreground">
-            <MessageSquare className="size-3.5" /> This form is a front-end demo — connect it to email
-            or a database when you&apos;re ready.
+            <MessageSquare className="size-3.5" /> Sending opens your email app with the message
+            addressed to otooest@gmail.com.
           </p>
         </form>
       </div>

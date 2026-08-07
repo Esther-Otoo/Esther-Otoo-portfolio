@@ -15,9 +15,9 @@ import {
   VisionMission,
 } from "@/components/portfolio/Sections";
 
-const TITLE = "Esther N. Otoo — Freelance Digital Marketer | Beyond Clicks";
+const TITLE = "Esther N. Otoo, Freelance Digital Marketer | Beyond Clicks";
 const DESCRIPTION =
-  "Beyond Clicks: portfolio of Esther Ntiamoah Otoo, freelance digital marketer and KNUST Computer Science graduate in Accra — SEO, social media, paid ads and analytics.";
+  "Beyond Clicks: portfolio of Esther Ntiamoah Otoo, freelance digital marketer and KNUST Computer Science graduate in Accra, SEO, social media, paid ads and analytics.";
 
 export const Route = createFileRoute("/")({
   component: Index,
