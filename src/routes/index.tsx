@@ -1,24 +1,71 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { Nav } from "@/components/portfolio/Nav";
+import { Hero } from "@/components/portfolio/Hero";
+import {
+  About,
+  Certifications,
+  Contact,
+  Education,
+  Experience,
+  Footer,
+  Projects,
+  Services,
+  Skills,
+  Testimonials,
+} from "@/components/portfolio/Sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Esther Otoo — Computer Science Graduate & Digital Marketer";
+const DESCRIPTION =
+  "Portfolio of Esther Otoo: Computer Science graduate and digital marketer skilled in SEO, social media, IT support and customer service.";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "profile" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Esther Otoo",
+          jobTitle: "Digital Marketer & IT Support Professional",
+          description: DESCRIPTION,
+          knowsAbout: ["SEO", "SEM", "Social Media Marketing", "IT Support", "Web Development"],
+        }),
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Services />
+        <Projects />
+        <Certifications />
+        <Experience />
+        <Education />
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
+      <Toaster />
     </div>
   );
 }
