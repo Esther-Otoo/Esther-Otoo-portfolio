@@ -16,6 +16,7 @@ import {
   Megaphone,
   MessageSquare,
   PenTool,
+  Phone,
   Quote,
   Rocket,
   Search,
