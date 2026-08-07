@@ -211,12 +211,12 @@ export function Services() {
 
 const PROJECTS = [
   {
-    title: "DUSSUS, For The Boss Within",
+    title: "BOSSES: For The Boss Within",
     text: "Brand and campaign concept for an all-genders clothing store: positioning as affordable luxury, a launch offer for the first 50 shoppers, and creatives across tops, bottoms, footwear and accessories.",
     tags: ["Brand Strategy", "Campaign", "Canva"],
   },
   {
-    title: "Wares, Product Catalogue Launch",
+    title: "Wares Product Catalogue Launch",
     text: "Digital catalogue and web presence for a homeware range, with clear product storytelling across sizes and colours to make browsing effortless on mobile and tablet.",
     tags: ["Content", "Web", "E-commerce"],
   },
@@ -354,25 +354,25 @@ export function Experience() {
           {
             title: "Digital Marketing Bootcamp Trainee",
             org: "Generation Ghana, Remote",
-            period: "May, Aug 2026",
+            period: "May to Aug 2026",
             text: "Built practical skills in SEO, social media, paid advertising, email marketing and analytics. Developed and presented data-informed campaign plans, analysed results to identify optimisation opportunities, and collaborated with cross-functional teams on client presentations under tight deadlines.",
           },
           {
             title: "National Service Personnel",
             org: "Driver and Vehicle Licensing Authority (DVLA)",
-            period: "Nov 2023, Oct 2024",
+            period: "Nov 2023 to Oct 2024",
             text: "Supported daily vehicle registration and licensing operations with a focus on data accuracy, delivered customer service and administrative assistance, and worked with teams to streamline processes and improve customer satisfaction.",
           },
           {
             title: "IT Intern",
             org: "Tema Oil Refinery, Tema",
-            period: "Oct 2022, Dec 2022",
+            period: "Oct 2022 to Dec 2022",
             text: "Performed computer system maintenance, repairs and software installation, and assisted with document management, printing and data processing. Produced detailed reports used for operational decision-making.",
           },
           {
             title: "Customer Service Intern",
             org: "Goldmaxx Security Company, Accra",
-            period: "Oct 2021, Nov 2021",
+            period: "Oct 2021 to Nov 2021",
             text: "Handled client and employee enquiries by phone, email and in person, supported HR with attendance records and payroll, and improved customer satisfaction through clear communication and follow-ups.",
           },
         ]}
