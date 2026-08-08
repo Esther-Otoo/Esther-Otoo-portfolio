@@ -488,8 +488,15 @@ export function Contact() {
                 </span>
               </>
             );
+            const isExternal = href?.startsWith("http");
             return href ? (
-              <a key={label} href={href} className="card-surface card-hover flex items-center gap-4 p-5">
+              <a
+                key={label}
+                href={href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                className="card-surface card-hover flex items-center gap-4 p-5"
+              >
                 {inner}
               </a>
             ) : (
