@@ -459,7 +459,7 @@ export function VisionMission() {
 const CONTACTS = [
   { icon: Mail, label: "Email", value: "otooest@gmail.com", href: "mailto:otooest@gmail.com" },
   { icon: Phone, label: "Telephone", value: "+233 558 521 997", href: "tel:+233558521997" },
-  { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: "https://www.linkedin.com/" },
+  { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: "https://www.linkedin.com/in/esther-otoo" },
   { icon: MapPin, label: "Location", value: "Accra, Ghana", href: undefined },
 ];
 
