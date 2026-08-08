@@ -459,7 +459,7 @@ export function VisionMission() {
 const CONTACTS = [
   { icon: Mail, label: "Email", value: "otooest@gmail.com", href: "mailto:otooest@gmail.com" },
   { icon: Phone, label: "Telephone", value: "+233 558 521 997", href: "tel:+233558521997" },
-  { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: "https://www.linkedin.com/" },
+  { icon: Linkedin, label: "LinkedIn", value: "Connect with me", href: "https://www.linkedin.com/in/esther-otoo" },
   { icon: MapPin, label: "Location", value: "Accra, Ghana", href: undefined },
 ];
 
@@ -488,8 +488,15 @@ export function Contact() {
                 </span>
               </>
             );
+            const isExternal = href?.startsWith("http");
             return href ? (
-              <a key={label} href={href} className="card-surface card-hover flex items-center gap-4 p-5">
+              <a
+                key={label}
+                href={href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                className="card-surface card-hover flex items-center gap-4 p-5"
+              >
                 {inner}
               </a>
             ) : (
@@ -592,15 +599,17 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-2">
           {[
-            { icon: Linkedin, label: "LinkedIn" },
-            { icon: Github, label: "GitHub" },
-            { icon: Mail, label: "Email" },
-            { icon: Search, label: "Portfolio" },
-          ].map(({ icon: Icon, label }) => (
+            { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/esther-otoo" },
+            { icon: Github, label: "GitHub", href: "#contact" },
+            { icon: Mail, label: "Email", href: "mailto:otooest@gmail.com" },
+            { icon: Search, label: "Portfolio", href: "#home" },
+          ].map(({ icon: Icon, label, href }) => (
             <a
               key={label}
-              href="#contact"
+              href={href}
               aria-label={label}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="inline-flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
             >
               <Icon className="size-4" />
