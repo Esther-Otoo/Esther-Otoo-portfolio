@@ -592,15 +592,17 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-2">
           {[
-            { icon: Linkedin, label: "LinkedIn" },
-            { icon: Github, label: "GitHub" },
-            { icon: Mail, label: "Email" },
-            { icon: Search, label: "Portfolio" },
-          ].map(({ icon: Icon, label }) => (
+            { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/esther-otoo" },
+            { icon: Github, label: "GitHub", href: "#contact" },
+            { icon: Mail, label: "Email", href: "mailto:otooest@gmail.com" },
+            { icon: Search, label: "Portfolio", href: "#home" },
+          ].map(({ icon: Icon, label, href }) => (
             <a
               key={label}
-              href="#contact"
+              href={href}
               aria-label={label}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="inline-flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
             >
               <Icon className="size-4" />
