@@ -25,11 +25,13 @@ export function Nav() {
   return (
     <>
       <div
+        id="scroll-progress"
         aria-hidden
         className="fixed inset-x-0 top-0 z-50 h-[3px] origin-left bg-primary transition-transform duration-150"
         style={{ transform: `scaleX(${progress / 100})` }}
       />
       <header
+        id="site-header"
         className={cn(
           "fixed inset-x-0 top-0 z-40 transition-all duration-300",
           scrolled ? "bg-card/80 shadow-[var(--shadow-soft)] backdrop-blur-xl" : "bg-transparent",
@@ -45,11 +47,10 @@ export function Nav() {
               <li key={s.id}>
                 <a
                   href={`#${s.id}`}
+                  data-nav-link
                   className={cn(
                     "rounded-full px-3 py-2 text-[15px] transition-colors",
-                    active === s.id
-                      ? "bg-primary/10 text-primary"
-                      : "text-muted-foreground hover:text-foreground",
+                    active === s.id ? "nav-active bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground",
                   )}
                 >
                   {s.label}
@@ -66,6 +67,7 @@ export function Nav() {
           </a>
 
           <button
+            id="mobile-menu-btn"
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
@@ -77,23 +79,22 @@ export function Nav() {
         </nav>
 
         {open && (
-          <div className="border-t border-border bg-card/95 backdrop-blur-xl lg:hidden">
+          <div id="mobile-menu" className="border-t border-border bg-card/95 backdrop-blur-xl lg:hidden">
             <ul className="mx-auto grid max-w-6xl gap-1 px-5 py-4 sm:px-8">
               {SECTIONS.map((s) => (
-                <li key={s.id}>
-                  <a
-                    href={`#${s.id}`}
-                    onClick={() => setOpen(false)}
-                    className={cn(
-                      "block rounded-xl px-3 py-3 text-base",
-                      active === s.id
-                        ? "bg-primary/10 text-primary"
-                        : "text-muted-foreground hover:bg-secondary",
-                    )}
-                  >
-                    {s.label}
-                  </a>
-                </li>
+              <li key={s.id}>
+                <a
+                  href={`#${s.id}`}
+                  data-nav-link
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    "block rounded-xl px-3 py-3 text-base",
+                    active === s.id ? "nav-active bg-primary/10 text-primary" : "text-muted-foreground hover:bg-secondary",
+                  )}
+                >
+                  {s.label}
+                </a>
+              </li>
               ))}
             </ul>
           </div>
@@ -101,6 +102,7 @@ export function Nav() {
       </header>
 
       <a
+        id="back-to-top"
         href="#home"
         aria-label="Back to top"
         className={cn(

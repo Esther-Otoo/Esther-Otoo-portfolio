@@ -362,6 +362,8 @@ function WorkCard({ item, onZoom }: { item: Work; onZoom: (src: string, alt: str
       {item.image ? (
         <button
           type="button"
+          data-lightbox={item.image}
+          data-alt={item.imageAlt ?? item.title}
           onClick={() => onZoom(item.image!, item.imageAlt ?? item.title)}
           className="group block w-full bg-secondary"
           aria-label={`Open larger view of ${item.title}`}
@@ -522,6 +524,7 @@ export function Projects() {
 
       {zoom && (
         <div
+          id="lightbox"
           role="dialog"
           aria-modal="true"
           aria-label={zoom.alt}
@@ -529,6 +532,7 @@ export function Projects() {
           className="fixed inset-0 z-[60] flex items-center justify-center bg-foreground/70 p-4 backdrop-blur-sm"
         >
           <button
+            id="lightbox-close"
             type="button"
             aria-label="Close larger view"
             onClick={() => setZoom(null)}
@@ -537,6 +541,7 @@ export function Projects() {
             <X className="size-5" />
           </button>
           <img
+            id="lightbox-img"
             src={zoom.src}
             alt={zoom.alt}
             onClick={(e) => e.stopPropagation()}
@@ -780,6 +785,7 @@ export function Contact() {
         </div>
 
         <form
+          id="contact-form"
           className="card-surface grid gap-4 p-6 sm:p-8"
           onSubmit={(e) => {
             e.preventDefault();
