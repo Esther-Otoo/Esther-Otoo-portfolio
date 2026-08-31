@@ -24,8 +24,11 @@ import {
   Share2,
   Sparkles,
   Users,
+  X,
 } from "lucide-react";
 import { toast } from "sonner";
+import gbpAsset from "@/assets/bossesfit-gbp.jpeg.asset.json";
+import auditAsset from "@/assets/danny-audit.docx.asset.json";
 import { useReveal } from "./hooks";
 
 /* ---------------------------------- shell --------------------------------- */
@@ -179,7 +182,7 @@ const SERVICES = [
   { icon: Headset, title: "IT Support", text: "Troubleshooting, setup and friendly first-line technical help." },
   { icon: Share2, title: "Social Media Management", text: "Content calendars, community engagement and reporting." },
   { icon: PenTool, title: "Content Creation", text: "Copy, graphics and Canva visuals aligned to your brand." },
-  { icon: Globe, title: "Website Assistance", text: "Updates, maintenance and simple front-end improvements." },
+  { icon: Globe, title: "Website Creation", text: "Creating and improving websites that give businesses a stronger digital presence, while supporting usability, content, basic SEO, audits and ongoing maintenance." },
   { icon: Briefcase, title: "Administrative Support", text: "Organised data entry, scheduling and document handling." },
 ];
 
