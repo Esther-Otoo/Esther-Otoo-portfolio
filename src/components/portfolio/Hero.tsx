@@ -14,7 +14,7 @@ function Stat({ value, suffix, label }: { value: number; suffix?: string; label:
   return (
     <div>
       <p className="font-display text-2xl font-semibold text-foreground sm:text-3xl">
-        <span ref={ref}>{n}</span>
+        <span ref={ref} data-counter={value} data-duration={1600}>{n}</span>
         {suffix}
       </p>
       <p className="mt-1.5 text-sm text-muted-foreground sm:text-base">{label}</p>
@@ -63,6 +63,7 @@ export function Hero() {
           </h1>
 
           <p
+            id="typed-tagline"
             className="mt-4 min-h-7 font-mono text-sm text-primary sm:text-base"
             aria-label={PHRASES.join(" | ")}
           >
