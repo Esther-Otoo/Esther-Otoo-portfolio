@@ -17,7 +17,7 @@ function Stat({ value, suffix, label }: { value: number; suffix?: string; label:
         <span ref={ref}>{n}</span>
         {suffix}
       </p>
-      <p className="mt-1 text-xs text-muted-foreground sm:text-sm">{label}</p>
+      <p className="mt-1.5 text-sm text-muted-foreground sm:text-base">{label}</p>
     </div>
   );
 }
@@ -72,7 +72,7 @@ export function Hero() {
             </span>
           </p>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Behind every click is an opportunity to build meaningful connections and grow a brand. I
             combine strategy, creativity and data-driven insight to help businesses strengthen their
             online presence, always going Beyond Clicks.
@@ -83,14 +83,14 @@ export function Hero() {
               ref={cvRef}
               href={cvAsset.url}
               download="Esther-Otoo-Portfolio.pdf"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-lift)] transition-[transform,box-shadow] duration-300"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-base font-medium text-primary-foreground shadow-[var(--shadow-lift)] transition-[transform,box-shadow] duration-300"
             >
               <Download className="size-4" /> Download CV
             </a>
             <a
               ref={contactRef}
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium text-foreground shadow-[var(--shadow-soft)] transition-[transform,box-shadow] duration-300"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-base font-medium text-foreground shadow-[var(--shadow-soft)] transition-[transform,box-shadow] duration-300"
             >
               <Mail className="size-4" /> Contact Me
             </a>

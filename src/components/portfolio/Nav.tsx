@@ -46,7 +46,7 @@ export function Nav() {
                 <a
                   href={`#${s.id}`}
                   className={cn(
-                    "rounded-full px-3 py-2 text-sm transition-colors",
+                    "rounded-full px-3.5 py-2 text-base transition-colors",
                     active === s.id
                       ? "bg-primary/10 text-primary"
                       : "text-muted-foreground hover:text-foreground",
@@ -60,7 +60,7 @@ export function Nav() {
 
           <a
             href="#contact"
-            className="hidden rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5 lg:inline-flex"
+            className="hidden rounded-full bg-primary px-5 py-2.5 text-base font-medium text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5 lg:inline-flex"
           >
             Hire me
           </a>
@@ -85,7 +85,7 @@ export function Nav() {
                     href={`#${s.id}`}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "block rounded-xl px-3 py-2.5 text-sm",
+                      "block rounded-xl px-3 py-3 text-base",
                       active === s.id
                         ? "bg-primary/10 text-primary"
                         : "text-muted-foreground hover:bg-secondary",

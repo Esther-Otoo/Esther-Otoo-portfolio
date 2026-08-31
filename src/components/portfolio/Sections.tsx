@@ -453,14 +453,14 @@ function WorkCard({ item, onZoom }: { item: Work; onZoom: (src: string, alt: str
             }
             target={item.cta?.href ? "_blank" : undefined}
             rel={item.cta?.href ? "noopener noreferrer" : undefined}
-            className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
+            className="rounded-full bg-primary px-5 py-2.5 text-base font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
           >
             {item.cta?.label ?? "View Project"}
           </a>
           {!item.cta && (
             <a
               href={`mailto:otooest@gmail.com?subject=${encodeURIComponent(`Case study request: ${item.title}`)}&body=${encodeURIComponent(`Hello Esther, please share the case study for ${item.title}.`)}`}
-              className="rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+              className="rounded-full border border-border px-5 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
             >
               View Case Study
             </a>
@@ -863,7 +863,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 px-5 sm:flex-row sm:px-8">
-        <p className="font-display text-sm font-semibold">
+        <p className="font-display text-base font-semibold">
           Esther Otoo<span className="text-primary">.</span>
         </p>
         <p className="text-xs text-muted-foreground">
