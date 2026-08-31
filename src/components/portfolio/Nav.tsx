@@ -8,7 +8,7 @@ export const SECTIONS = [
   { id: "vision", label: "Vision" },
   { id: "skills", label: "Skills" },
   { id: "services", label: "Services" },
-  { id: "projects", label: "Projects" },
+  { id: "projects", label: "Proof of Work" },
   { id: "certifications", label: "Certifications" },
   { id: "experience", label: "Experience" },
   { id: "education", label: "Education" },
@@ -46,7 +46,7 @@ export function Nav() {
                 <a
                   href={`#${s.id}`}
                   className={cn(
-                    "rounded-full px-3.5 py-2 text-base transition-colors",
+                    "rounded-full px-3 py-2 text-[15px] transition-colors",
                     active === s.id
                       ? "bg-primary/10 text-primary"
                       : "text-muted-foreground hover:text-foreground",
