@@ -53,8 +53,8 @@ function Section({
     <section id={id} className={muted ? "bg-card/60 py-20 sm:py-24" : "py-20 sm:py-24"}>
       <div ref={reveal.ref} className={`mx-auto max-w-6xl px-5 sm:px-8 ${reveal.className}`}>
         <p className="font-mono text-xs uppercase tracking-[0.18em] text-primary">{eyebrow}</p>
-        <h2 className="mt-3 text-3xl sm:text-4xl">{title}</h2>
-        {lead && <p className="mt-4 max-w-2xl text-muted-foreground">{lead}</p>}
+        <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[2.75rem]">{title}</h2>
+        {lead && <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">{lead}</p>}
         <div className="mt-10">{children}</div>
       </div>
     </section>
@@ -67,7 +67,7 @@ function Card({ children, className = "" }: { children: ReactNode; className?: s
 
 function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="rounded-full border border-border bg-secondary px-2.5 py-1 font-mono text-[11px] text-muted-foreground">
+    <span className="rounded-full border border-border bg-secondary px-2.5 py-1 font-mono text-xs text-muted-foreground">
       {children}
     </span>
   );
@@ -97,8 +97,8 @@ export function About() {
             <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
               <Icon className="size-5" />
             </span>
-            <h3 className="mt-4 text-lg">{title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+            <h3 className="mt-4 text-xl">{title}</h3>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">{text}</p>
           </Card>
         ))}
       </div>
@@ -201,8 +201,8 @@ export function Services() {
             <span className="inline-flex size-11 items-center justify-center rounded-xl bg-accent/20 text-foreground">
               <Icon className="size-5" />
             </span>
-            <h3 className="mt-4 text-lg">{title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+            <h3 className="mt-4 text-xl">{title}</h3>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">{text}</p>
           </Card>
         ))}
       </div>
@@ -384,7 +384,7 @@ function WorkCard({ item, onZoom }: { item: Work; onZoom: (src: string, alt: str
       <div className="flex flex-1 flex-col p-6 sm:p-7">
         <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">{item.type}</p>
         <h4 className="mt-2 text-xl leading-snug">{item.title}</h4>
-        <p className="mt-1 text-sm text-muted-foreground">Role: {item.role}</p>
+        <p className="mt-1 text-base text-muted-foreground">Role: {item.role}</p>
         <p className="mt-3 text-base leading-relaxed text-muted-foreground">{item.text}</p>
 
         {item.caseStudy && (
@@ -575,7 +575,7 @@ export function Certifications() {
               <Award className="size-5" />
             </span>
             <h3 className="mt-4 text-base">{c.title}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">{c.issuer}</p>
+            <p className="mt-1 text-base text-muted-foreground">{c.issuer}</p>
             <p className="mt-3 font-mono text-xs text-primary">{c.year}</p>
           </Card>
         ))}
@@ -599,8 +599,8 @@ function Timeline({
           <Card>
             <p className="font-mono text-xs text-primary">{i.period}</p>
             <h3 className="mt-2 text-lg">{i.title}</h3>
-            <p className="text-sm text-muted-foreground">{i.org}</p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.text}</p>
+            <p className="text-base text-muted-foreground">{i.org}</p>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">{i.text}</p>
           </Card>
         </li>
       ))}
@@ -685,8 +685,8 @@ export function Education() {
             </span>
             <p className="mt-4 font-mono text-xs text-primary">{e.period}</p>
             <h3 className="mt-1 text-lg">{e.title}</h3>
-            <p className="text-sm text-muted-foreground">{e.org}</p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.text}</p>
+            <p className="text-base text-muted-foreground">{e.org}</p>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">{e.text}</p>
           </Card>
         ))}
       </div>
@@ -718,7 +718,7 @@ export function VisionMission() {
           <Card key={v.label}>
             <Quote className="size-6 text-accent" />
             <h3 className="mt-4 text-lg">{v.label}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">{v.text}</p>
           </Card>
         ))}
       </div>
@@ -756,7 +756,7 @@ export function Contact() {
                 </span>
                 <span className="min-w-0">
                   <span className="block font-mono text-xs text-muted-foreground">{label}</span>
-                  <span className="block truncate text-sm text-foreground">{value}</span>
+                  <span className="block truncate text-base text-foreground">{value}</span>
                 </span>
               </>
             );
@@ -802,48 +802,48 @@ export function Contact() {
           }}
         >
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm">
+            <label className="grid gap-2 text-base">
               <span className="text-muted-foreground">Name</span>
               <input
                 required
                 name="name"
-                className="rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                className="rounded-xl border border-border bg-background px-4 py-3 text-base outline-none transition-colors focus:border-primary"
                 placeholder="Your name"
               />
             </label>
-            <label className="grid gap-2 text-sm">
+            <label className="grid gap-2 text-base">
               <span className="text-muted-foreground">Email</span>
               <input
                 required
                 type="email"
                 name="email"
-                className="rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                className="rounded-xl border border-border bg-background px-4 py-3 text-base outline-none transition-colors focus:border-primary"
                 placeholder="you@email.com"
               />
             </label>
           </div>
-          <label className="grid gap-2 text-sm">
+          <label className="grid gap-2 text-base">
             <span className="text-muted-foreground">Subject</span>
             <input
               name="subject"
-              className="rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+              className="rounded-xl border border-border bg-background px-4 py-3 text-base outline-none transition-colors focus:border-primary"
               placeholder="Role or project"
             />
           </label>
-          <label className="grid gap-2 text-sm">
+          <label className="grid gap-2 text-base">
             <span className="text-muted-foreground">Message</span>
             <textarea
               required
               name="message"
               rows={5}
-              className="resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+              className="resize-none rounded-xl border border-border bg-background px-4 py-3 text-base outline-none transition-colors focus:border-primary"
               placeholder="Tell me a little about the opportunity…"
             />
           </label>
           <button
             type="submit"
             disabled={sending}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5 disabled:opacity-70"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-base font-medium text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5 disabled:opacity-70"
           >
             <Send className="size-4" /> {sending ? "Sending…" : "Send message"}
           </button>
