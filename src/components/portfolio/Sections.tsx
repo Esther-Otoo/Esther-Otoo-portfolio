@@ -554,7 +554,7 @@ export function Projects() {
 const CERTS = [
   { title: "Digital Marketing Bootcamp", issuer: "Generation Ghana", year: "2026" },
   { title: "BSc Computer Science", issuer: "KNUST", year: "2026" },
-  { title: "Customer Service", issuer: "Goldmaxx Security Company", year: "2021" },
+  { title: "Customer Service", issuer: "Goldmaxx Security Company", year: "2024" },
   { title: "National Service Certificate", issuer: "DVLA, Ghana", year: "2024" },
   { title: "IT Internship", issuer: "Tema Oil Refinery", year: "2022" },
 ];
@@ -614,33 +614,39 @@ export function Experience() {
       id="experience"
       eyebrow="Experience"
       title="Where I've worked"
-      lead="Marketing, technology and customer-facing roles across Ghana."
+      lead="A natural progression from a Computer Science background into customer facing and digital roles, then into brand, business strategy and digital marketing."
     >
       <Timeline
         items={[
           {
+            title: "Brand & Business Strategist",
+            org: "BossesFit",
+            period: "2026",
+            text: "Shaped brand positioning and target audience analysis for BossesFit, contributing to business and marketing strategy, social media strategy, campaign planning and brand communication, while identifying opportunities to grow the brand and strengthen its digital presence.",
+          },
+          {
             title: "Digital Marketing Bootcamp Trainee",
             org: "Generation Ghana, Remote",
             period: "May to Aug 2026",
-            text: "Built practical skills in SEO, social media, paid advertising, email marketing and analytics. Developed and presented data-informed campaign plans, analysed results to identify optimisation opportunities, and collaborated with cross-functional teams on client presentations under tight deadlines.",
+            text: "Built practical skills in SEO, social media, paid advertising, email marketing and analytics. Developed and presented data informed campaign plans, analysed results to identify optimisation opportunities, and collaborated with cross functional teams on client presentations under tight deadlines.",
           },
           {
             title: "National Service Personnel",
             org: "Driver and Vehicle Licensing Authority (DVLA)",
             period: "Nov 2023 to Oct 2024",
-            text: "Supported daily vehicle registration and licensing operations with a focus on data accuracy, delivered customer service and administrative assistance, and worked with teams to streamline processes and improve customer satisfaction.",
+            text: "Supported daily vehicle registration and licensing operations, working with digital systems and handling data with a strong focus on accuracy and attention to detail. Engaged directly with customers, providing clear professional communication, resolving enquiries and understanding customer needs, alongside administrative support that built the problem solving and organisational skills I apply to client work today.",
           },
           {
             title: "IT Intern",
             org: "Tema Oil Refinery, Tema",
             period: "Oct 2022 to Dec 2022",
-            text: "Performed computer system maintenance, repairs and software installation, and assisted with document management, printing and data processing. Produced detailed reports used for operational decision-making.",
+            text: "Performed computer system maintenance, repairs and software installation, and assisted with document management, printing and data processing. Produced detailed reports used for operational decision making.",
           },
           {
-            title: "Customer Service Intern",
+            title: "Customer Service",
             org: "Goldmaxx Security Company, Accra",
-            period: "Oct 2021 to Nov 2021",
-            text: "Handled client and employee enquiries by phone, email and in person, supported HR with attendance records and payroll, and improved customer satisfaction through clear communication and follow-ups.",
+            period: "2024",
+            text: "Handled client and employee enquiries by phone, email and in person, supported HR with attendance records and payroll, and strengthened customer satisfaction through clear communication and consistent follow ups.",
           },
         ]}
       />
