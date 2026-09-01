@@ -29,6 +29,7 @@ import {
 import { toast } from "sonner";
 import gbpAsset from "@/assets/bossesfit-gbp.jpeg.asset.json";
 import auditAsset from "@/assets/danny-audit.docx.asset.json";
+import { cn } from "@/lib/utils";
 import { useReveal } from "./hooks";
 
 /* ---------------------------------- shell --------------------------------- */
