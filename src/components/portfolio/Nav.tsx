@@ -78,10 +78,15 @@ export function Nav() {
           </button>
         </nav>
 
-        {open && (
-          <div id="mobile-menu" className="border-t border-border bg-card/95 backdrop-blur-xl lg:hidden">
-            <ul className="mx-auto grid max-w-6xl gap-1 px-5 py-4 sm:px-8">
-              {SECTIONS.map((s) => (
+        <div
+          id="mobile-menu"
+          className={cn(
+            "border-t border-border bg-card/95 backdrop-blur-xl lg:hidden",
+            open ? "block" : "hidden",
+          )}
+        >
+          <ul className="mx-auto grid max-w-6xl gap-1 px-5 py-4 sm:px-8">
+            {SECTIONS.map((s) => (
               <li key={s.id}>
                 <a
                   href={`#${s.id}`}
@@ -95,10 +100,9 @@ export function Nav() {
                   {s.label}
                 </a>
               </li>
-              ))}
-            </ul>
-          </div>
-        )}
+            ))}
+          </ul>
+        </div>
       </header>
 
       <a
