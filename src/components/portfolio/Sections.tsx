@@ -522,33 +522,34 @@ export function Projects() {
         </a>
       </div>
 
-      {zoom && (
-        <div
-          id="lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label={zoom.alt}
+      <div
+        id="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label={zoom?.alt ?? "Enlarged view"}
+        onClick={() => setZoom(null)}
+        className={cn(
+          "fixed inset-0 z-[60] items-center justify-center bg-foreground/70 p-4 backdrop-blur-sm",
+          zoom ? "flex" : "hidden",
+        )}
+      >
+        <button
+          id="lightbox-close"
+          type="button"
+          aria-label="Close larger view"
           onClick={() => setZoom(null)}
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-foreground/70 p-4 backdrop-blur-sm"
+          className="absolute right-5 top-5 inline-flex size-11 items-center justify-center rounded-full bg-card text-foreground shadow-[var(--shadow-lift)]"
         >
-          <button
-            id="lightbox-close"
-            type="button"
-            aria-label="Close larger view"
-            onClick={() => setZoom(null)}
-            className="absolute right-5 top-5 inline-flex size-11 items-center justify-center rounded-full bg-card text-foreground shadow-[var(--shadow-lift)]"
-          >
-            <X className="size-5" />
-          </button>
-          <img
-            id="lightbox-img"
-            src={zoom.src}
-            alt={zoom.alt}
-            onClick={(e) => e.stopPropagation()}
-            className="max-h-[88vh] w-auto max-w-full rounded-2xl object-contain shadow-[var(--shadow-lift)]"
-          />
-        </div>
-      )}
+          <X className="size-5" />
+        </button>
+        <img
+          id="lightbox-img"
+          src={zoom?.src ?? ""}
+          alt={zoom?.alt ?? ""}
+          onClick={(e) => e.stopPropagation()}
+          className="max-h-[88vh] w-auto max-w-full rounded-2xl object-contain shadow-[var(--shadow-lift)]"
+        />
+      </div>
     </Section>
   );
 }
