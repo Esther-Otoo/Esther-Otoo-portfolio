@@ -471,6 +471,40 @@ function WorkCard({ item, onZoom }: { item: Work; onZoom: (src: string, alt: str
           </div>
         )}
 
+        {item.gallery && (
+          <div className="mt-5">
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">
+              Proof from the audit document
+            </p>
+            <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {item.gallery.map((g) => (
+                <li key={g.src}>
+                  <button
+                    type="button"
+                    data-lightbox={g.src}
+                    data-alt={g.alt}
+                    onClick={() => onZoom(g.src, g.alt)}
+                    className="group block w-full overflow-hidden rounded-xl border border-border bg-secondary text-left"
+                    aria-label={`Open larger view of ${g.caption}`}
+                  >
+                    <img
+                      src={g.src}
+                      alt={g.alt}
+                      loading="lazy"
+                      className="h-32 w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03] sm:h-40"
+                    />
+                    <span className="block px-3 py-2 text-sm text-muted-foreground">
+                      {g.caption}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+
+
         <p className="mt-5 font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
           Skills demonstrated
         </p>
