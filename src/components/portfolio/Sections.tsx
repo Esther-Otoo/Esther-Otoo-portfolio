@@ -638,6 +638,12 @@ export function Experience() {
             text: "Built practical skills in SEO, social media, paid advertising, email marketing and analytics. Developed and presented data informed campaign plans, analysed results to identify optimisation opportunities, and collaborated with cross functional teams on client presentations under tight deadlines.",
           },
           {
+            title: "Customer Service",
+            org: "Goldmaxx Security Company, Accra",
+            period: "2024",
+            text: "Handled client and employee enquiries by phone, email and in person, supported HR with attendance records and payroll, and strengthened customer satisfaction through clear communication and consistent follow ups.",
+          },
+          {
             title: "National Service Personnel",
             org: "Driver and Vehicle Licensing Authority (DVLA)",
             period: "Nov 2023 to Oct 2024",
@@ -648,12 +654,6 @@ export function Experience() {
             org: "Tema Oil Refinery, Tema",
             period: "Oct 2022 to Dec 2022",
             text: "Performed computer system maintenance, repairs and software installation, and assisted with document management, printing and data processing. Produced detailed reports used for operational decision making.",
-          },
-          {
-            title: "Customer Service",
-            org: "Goldmaxx Security Company, Accra",
-            period: "2024",
-            text: "Handled client and employee enquiries by phone, email and in person, supported HR with attendance records and payroll, and strengthened customer satisfaction through clear communication and consistent follow ups.",
           },
         ]}
       />
