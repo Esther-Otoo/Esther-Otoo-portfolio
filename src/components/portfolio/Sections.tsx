@@ -221,6 +221,7 @@ type Work = {
   skills: string[];
   image?: string;
   imageAlt?: string;
+  gallery?: { src: string; alt: string; caption: string }[];
   cta?: { label: string; href: string };
   cta2?: { label: string; href: string };
   caseStudy?: {
