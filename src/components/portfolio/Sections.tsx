@@ -29,6 +29,12 @@ import {
 import { toast } from "sonner";
 import gbpAsset from "@/assets/bossesfit-gbp.jpeg.asset.json";
 import auditAsset from "@/assets/danny-audit.docx.asset.json";
+import auditP1 from "@/assets/danny-audit-p1.jpg.asset.json";
+import auditP2 from "@/assets/danny-audit-p2.jpg.asset.json";
+import auditP3 from "@/assets/danny-audit-p3.jpg.asset.json";
+import auditP5 from "@/assets/danny-audit-p5.jpg.asset.json";
+import auditP8 from "@/assets/danny-audit-p8.jpg.asset.json";
+
 import { cn } from "@/lib/utils";
 import { useReveal } from "./hooks";
 
