@@ -298,6 +298,33 @@ const WORK_GROUPS: { category: string; icon: typeof Rocket; items: Work[] }[] = 
             "On page SEO recommendations",
           ],
         },
+        gallery: [
+          {
+            src: auditP1.url,
+            alt: "Technical SEO audit plan for Danny Computers covering HTTPS, mobile optimization, site speed, robots.txt and sitemap",
+            caption: "Technical SEO plan",
+          },
+          {
+            src: auditP2.url,
+            alt: "Sitemap and URL structure recommendations from the Danny Computers SEO audit",
+            caption: "Sitemap & URL structure",
+          },
+          {
+            src: auditP3.url,
+            alt: "Keyword research table with ranked keywords and search intent for Danny Computers",
+            caption: "Keyword research",
+          },
+          {
+            src: auditP5.url,
+            alt: "SEO optimized blog plan with title, featured image, file names and alt text",
+            caption: "Blog optimization",
+          },
+          {
+            src: auditP8.url,
+            alt: "Image SEO optimisation checklist covering file names, alt text, size, format, placement and captions",
+            caption: "Image SEO checklist",
+          },
+        ],
         cta: { label: "View Audit", href: auditAsset.url },
       },
     ],
