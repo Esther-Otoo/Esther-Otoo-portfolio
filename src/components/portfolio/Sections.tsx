@@ -29,6 +29,12 @@ import {
 import { toast } from "sonner";
 import gbpAsset from "@/assets/bossesfit-gbp.jpeg.asset.json";
 import auditAsset from "@/assets/danny-audit.docx.asset.json";
+import auditP1 from "@/assets/danny-audit-p1.jpg.asset.json";
+import auditP2 from "@/assets/danny-audit-p2.jpg.asset.json";
+import auditP3 from "@/assets/danny-audit-p3.jpg.asset.json";
+import auditP5 from "@/assets/danny-audit-p5.jpg.asset.json";
+import auditP8 from "@/assets/danny-audit-p8.jpg.asset.json";
+
 import { cn } from "@/lib/utils";
 import { useReveal } from "./hooks";
 
@@ -221,6 +227,7 @@ type Work = {
   skills: string[];
   image?: string;
   imageAlt?: string;
+  gallery?: { src: string; alt: string; caption: string }[];
   cta?: { label: string; href: string };
   cta2?: { label: string; href: string };
   caseStudy?: {
@@ -291,6 +298,33 @@ const WORK_GROUPS: { category: string; icon: typeof Rocket; items: Work[] }[] = 
             "On page SEO recommendations",
           ],
         },
+        gallery: [
+          {
+            src: auditP1.url,
+            alt: "Technical SEO audit plan for Danny Computers covering HTTPS, mobile optimization, site speed, robots.txt and sitemap",
+            caption: "Technical SEO plan",
+          },
+          {
+            src: auditP2.url,
+            alt: "Sitemap and URL structure recommendations from the Danny Computers SEO audit",
+            caption: "Sitemap & URL structure",
+          },
+          {
+            src: auditP3.url,
+            alt: "Keyword research table with ranked keywords and search intent for Danny Computers",
+            caption: "Keyword research",
+          },
+          {
+            src: auditP5.url,
+            alt: "SEO optimized blog plan with title, featured image, file names and alt text",
+            caption: "Blog optimization",
+          },
+          {
+            src: auditP8.url,
+            alt: "Image SEO optimisation checklist covering file names, alt text, size, format, placement and captions",
+            caption: "Image SEO checklist",
+          },
+        ],
         cta: { label: "View Audit", href: auditAsset.url },
       },
     ],
@@ -436,6 +470,40 @@ function WorkCard({ item, onZoom }: { item: Work; onZoom: (src: string, alt: str
             </div>
           </div>
         )}
+
+        {item.gallery && (
+          <div className="mt-5">
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">
+              Proof from the audit document
+            </p>
+            <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {item.gallery.map((g) => (
+                <li key={g.src}>
+                  <button
+                    type="button"
+                    data-lightbox={g.src}
+                    data-alt={g.alt}
+                    onClick={() => onZoom(g.src, g.alt)}
+                    className="group block w-full overflow-hidden rounded-xl border border-border bg-secondary text-left"
+                    aria-label={`Open larger view of ${g.caption}`}
+                  >
+                    <img
+                      src={g.src}
+                      alt={g.alt}
+                      loading="lazy"
+                      className="h-32 w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03] sm:h-40"
+                    />
+                    <span className="block px-3 py-2 text-sm text-muted-foreground">
+                      {g.caption}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+
 
         <p className="mt-5 font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
           Skills demonstrated
